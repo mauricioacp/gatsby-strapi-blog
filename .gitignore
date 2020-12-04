@@ -1,0 +1,4 @@
+/.graphqlconfig
+/schema.graphql
+/.idea/
+*.env

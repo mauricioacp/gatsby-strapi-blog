@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  //todo
   siteMetadata: {
     title: "WebDev Portfolio",
     description: "This is WebDev Portfolio Site",
@@ -33,8 +34,8 @@ module.exports = {
         //   contentTypes : `jobs`, `projects`, `blogs`,
         //   singleType : `about`
         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-        contentTypes: [`jobs`,`projects`],
-        singleTypes: [],
+        contentTypes: [`jobs`,`projects`,`blogs`],
+        singleTypes: [`about`],
       },
     },
     // {

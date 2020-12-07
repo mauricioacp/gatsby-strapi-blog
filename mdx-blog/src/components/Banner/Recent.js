@@ -4,10 +4,50 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import Title from './Title'
-// ...GatsbyImageSharpFluid
 
+const query = graphql`
+    {
+        allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
+            nodes {
+                frontmatter {
+                    slug
+                    date(formatString: "MMMM Do,YYYY")
+                    title
+                    image {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+                id
+            }
+        }
+    }
+`
 const Recent = () => {
-  return <Wrapper>Banner Recent</Wrapper>
+
+  const data = useStaticQuery(query)
+  const { allMdx: { nodes: posts } } = data
+  return (
+    <Wrapper>
+      <Title title='recent' />
+      {posts.map(post => {
+        const { title, slug, date, image: { childImageSharp: { fluid } } } = post.frontmatter
+        return (
+          <Link to={`/posts/${slug}`} key={post.id} className='post'>
+            <Image fluid={fluid} className='img' />
+          <div>
+            <h5>{title}</h5>
+            <p>{date}</p>
+          </div>
+          </Link>
+        )
+      })}
+    </Wrapper>
+  )
+
 }
 
 const Wrapper = styled.div`
@@ -17,9 +57,11 @@ const Wrapper = styled.div`
     column-gap: 1rem;
     margin-bottom: 1rem;
   }
+
   .img {
     border-radius: var(--radius);
   }
+
   h5 {
     font-size: 0.7rem;
     margin-bottom: 0.25rem;
@@ -27,11 +69,13 @@ const Wrapper = styled.div`
     line-height: 1.2;
     color: var(--clr-grey-1);
   }
+
   p {
     font-size: 0.6rem;
     margin-bottom: 0;
     color: var(--clr-grey-5);
   }
+
   .post:hover {
     h5 {
       color: var(--clr-primary-5);

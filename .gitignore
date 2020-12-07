@@ -2,3 +2,4 @@
 /schema.graphql
 /.idea/
 *.env
+/.idea/*

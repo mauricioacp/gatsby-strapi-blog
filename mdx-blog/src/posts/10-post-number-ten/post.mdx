@@ -1,0 +1,98 @@
+---
+title: Gatsby Tutorial
+slug: gatsby-tutorial
+image: ./images/gatsby-1.png
+date: 2020-05-27
+author: Mauricio Cavallini
+category: gatsby
+readTime: 34
+---
+import { Link } from 'gatsby';
+import { FiInfo } from 'react-icons/fi';
+import { Counter,LikeButton } from '../../components/Complete'
+
+
+
+## my first mdx file
+**I'm baby jianbing keffiyeh chartreuse, leggings aesthetic squid u
+gh humblebrag asymmetrical roof party banjo tumblr glossier.** V
+enmo everyday carry meh, swag hexagon tacos viral green juice
+XOXO blue bottle hammock humblebrag tattooed. Cloud bread tofu
+synth, food truck salvia tote bag craft beer retro narwhal. Col
+d-pressed forage 8-bit quinoa cred brooklyn. Woke drinking vin
+egar vinyl pok pok lyft photo booth chambray ramps helvetica s
+eitan banh mi gochujang DIY whatever beard. *Humblebrag street
+art chartreuse meditation shabby chic hexagon.* Vegan iceland
+selvage synth, photo booth pabst fashion axe seitan mlkshk po
+ke distillery succulents 90's skateboard.
+
+
+<div className='code'>
+
+
+  ```jsx
+  const firstName='Mauricio'
+  const lastName='Cavallini'
+  ```
+
+
+</div>
+
+
+<div className='nice-text'>
+  <h3>Nice text</h3>
+  <FiInfo className='nice-text-icon' />
+
+  Freegan typewriter tumeric hammock enamel pin palo
+  santo post-ironic YOLO next level. Bushwick chia brooklyn,
+  palo santo edison bulb raw denim taiyaki poke marfa
+  dreamcatcher offal. Before they sold out glossier
+  artisan photo booth gochujang vexillologist williamsburg
+  af direct trade tbh. Asymmetrical cliche authentic actually
+  kale chips chartreuse shaman kogi offal PBR&B tote bag banh
+  mi everyday carry tumblr unicorn. Chia mustache artisan
+  dreamcatcher.
+
+</div>
+
+
+<h2>React components</h2>
+
+
+<Counter />
+
+
+  ```jsx
+  import React from "react"
+  import styled from "styled-components"
+  import {AiOutlineLike} from "react-icons/ai"
+
+
+  const LikeButton = () => {
+  const [value, setValue] = React.useState(0)
+  return (
+  <Wrapper>
+    <div>
+      <button onClick={() => setValue(value + 1)}>
+        <AiOutlineLike />
+      </button>
+      <p>
+      Liked the post?
+      <br />
+      Click thumbs up few times
+      </p>
+    </div>
+    <span>+{value}</span>
+  </Wrapper>
+  )
+}
+  ```
+
+<LikeButton/>
+
+
+
+<Link to='/post' className='btn center-btn'>
+  All posts
+</Link>
+

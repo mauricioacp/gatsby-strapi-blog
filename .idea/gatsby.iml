@@ -2,7 +2,16 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/mdx-blog/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/mdx-blog/public" />
+      <excludeFolder url="file://$MODULE_DIR$/portfolio-api/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/portfolio-api/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/portfolio-api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/portfolio-api/exports" />
+      <excludeFolder url="file://$MODULE_DIR$/starter-project-gatsby-strapi-portfolio-2020/.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/starter-project-gatsby-strapi-portfolio-2020/public" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

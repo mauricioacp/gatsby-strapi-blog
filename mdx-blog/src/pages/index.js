@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
-// ...GatsbyImageSharpFluid
 
 const IndexPage = ({data}) => {
 
@@ -13,6 +12,7 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout>
+      <SEO title='Home'/>
       <Hero showPerson/>
       <Posts posts={posts} title='recently published'/>
     </Layout>

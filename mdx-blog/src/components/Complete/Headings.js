@@ -1,20 +1,20 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 const myH2 = ({ children, title }) => {
   if (title) {
     return (
       <HeadingTwo>
         <h2>{children}</h2>
-        <div className="underline"></div>
+        <div className='underline' />
       </HeadingTwo>
     )
   }
   return (
     <h2
       style={{
-        margin: "2rem 0",
-        color: "var(--clr-grey-5)",
+        margin: '2rem 0',
+        color: 'var(--clr-grey-5)'
       }}
     >
       {children}
@@ -23,6 +23,7 @@ const myH2 = ({ children, title }) => {
 }
 const HeadingTwo = styled.div`
   margin: 2rem 0;
+
   .underline {
     width: 5rem;
     height: 5px;
@@ -31,7 +32,7 @@ const HeadingTwo = styled.div`
 `
 const myH4 = props => {
   return (
-    <h3 style={{ margin: "2rem 0", color: "var(--clr-primary-5)" }}>
+    <h3 style={{ margin: '2rem 0', color: 'var(--clr-primary-5)' }}>
       {props.children}
     </h3>
   )

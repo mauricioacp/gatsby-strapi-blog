@@ -1,4 +1,12 @@
 module.exports = {
+  siteMetadata:{
+    title:`Gatsby MDX Blog`,
+    description:`Awesome blog built with Gatsby and MDX`,
+    titleTemplate:`%s | MDX Blogs`,
+    url:``,
+    image:`mainImg-png`,
+    twitterUsername: `@mauricio_acp`
+  },
   plugins: [
     `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,

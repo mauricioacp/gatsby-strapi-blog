@@ -38,7 +38,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "CI= gatsby build",
+    "build": "gatsby build",
     "cdev": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

@@ -1,7 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 })
-const queries = require("./src/constants/algolia")
+// const queries = require("./src/constants/algolia")
 module.exports = {
   siteMetadata: {
     title: `Design Shop`,
@@ -24,23 +24,23 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `500`, `700`]
-          },
-          {
-            family: `Open Sans`
-          },
-          {
-            family: `Caveat`
-          }
-        ]
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Roboto`,
+    //         variants: [`400`, `500`, `700`]
+    //       },
+    //       {
+    //         family: `Open Sans`
+    //       },
+    //       {
+    //         family: `Caveat`
+    //       }
+    //     ]
+    //   }
+    // },
     {
       resolve: `gatsby-source-airtable`,
       options: {
@@ -58,7 +58,17 @@ module.exports = {
             mapping: { image: `fileNode` }
           }
         ]
-      }
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries: require("./src/constants/algolia"),
+        chunkSize:10000
+      },
     }
   ]
 }
